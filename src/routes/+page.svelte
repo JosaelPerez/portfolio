@@ -13,25 +13,39 @@
     </p>
     <h1 class=" mt-2 text-5xl font-bold text-white">Full Stack Developer</h1>
     <div class="mt-24 flex gap-x-24">
-      <WebLogo src="assets/html-white.svg" alt="HTML Logo" caption="HTML" />
       <WebLogo
-        src="assets/tailwind-white.svg"
+        mainSource="assets/html-gray.svg"
+        secondarySource="assets/html.svg"
+        alt="HTML Logo"
+        caption="HTML" />
+      <WebLogo
+        mainSource="assets/tailwind-gray.svg"
+        secondarySource="assets/tailwind.svg"
         alt="Tailwind Logo"
         caption="Tailwind" />
       <WebLogo
-        src="assets/typescript-white.svg"
-        alt="TypeScript Logo"
-        caption="TypeScript" />
+        mainSource="assets/javascript-gray.svg"
+        secondarySource="assets/javascript.svg"
+        alt="Javascript Logo"
+        caption="Javascript" />
       <WebLogo
-        src="assets/svelte-white.svg"
+        mainSource="assets/svelte-gray.svg"
+        secondarySource="assets/svelte.svg"
         alt="Svelte Logo"
         caption="Svelte" />
       <WebLogo
-        src="assets/postgresql-white.svg"
+        mainSource="assets/postgresql-gray.svg"
+        secondarySource="assets/postgresql.svg"
         alt="PostgreSQL Logo"
         caption="PostgreSQL" />
-      <WebLogo src="assets/prisma.svg" alt="Prisma Logo" caption="Prisma" />
-      <WebLogo src="assets/github.svg" alt="GitHub Logo" caption="GitHub" />
+      <WebLogo
+        mainSource="assets/prisma.svg"
+        alt="Prisma Logo"
+        caption="Prisma" />
+      <WebLogo
+        mainSource="assets/github.svg"
+        alt="GitHub Logo"
+        caption="GitHub" />
     </div>
   </div>
 </main>
