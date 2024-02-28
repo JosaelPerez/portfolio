@@ -3,6 +3,6 @@
   import NavBar from "$lib/components/custom-ui/NavBar.svelte"
 </script>
 
-<NavBar />
+<!-- <NavBar /> -->
 
 <slot />
