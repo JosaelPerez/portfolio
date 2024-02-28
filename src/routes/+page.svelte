@@ -7,7 +7,7 @@
 
 <div class="flex h-screen flex-col items-center justify-start">
   <header class="self-stretch">
-    <nav class="border bg-transparent px-16 py-8">
+    <nav class="bg-transparent px-16 py-8">
       <ul class="flex list-none items-center justify-end gap-8 text-white">
         <li class="flex-grow text-2xl">
           <span class="font-bold">Josael</span> Perez
@@ -56,13 +56,13 @@
   </header>
 
   <main
-    class="container flex flex-grow flex-col items-center justify-center border p-0">
+    class="container flex flex-grow flex-col items-center justify-center p-0">
     <ProfileImage src="assets/profile.jpg" alt="Josael Perez" />
-    <p class="mt-8 border text-4xl font-bold text-white">
+    <p class="mt-8 text-4xl font-bold text-white">
       Hi! I'm &lcub;Josael&rcub;<span class="text-4xl"> &#129304</span>
     </p>
-    <h1 class="border text-5xl font-bold text-white">Full Stack Developer</h1>
-    <div class="mt-24 flex items-center justify-around self-stretch border">
+    <h1 class="text-5xl font-bold text-white">Full Stack Developer</h1>
+    <div class="mt-24 flex items-center justify-around self-stretch">
       <WebLogo
         mainSource="assets/html-gray.svg"
         secondarySource="assets/html.svg"

@@ -7,8 +7,7 @@
 
 <figure
   class="flex min-h-[150px] flex-col items-center justify-between transition-transform duration-300 ease-in-out hover:scale-110">
-  <div
-    class="relative flex min-h-[120px] w-32 items-center overflow-hidden border">
+  <div class="relative flex min-h-[120px] w-32 items-center overflow-hidden">
     <img
       src={mainSource}
       {alt}
