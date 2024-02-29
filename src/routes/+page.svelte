@@ -2,7 +2,7 @@
   import WebLogo from "$lib/components/custom-ui/WebLogo.svelte"
   import ProfileImage from "$lib/components/custom-ui/ProfileImage.svelte"
   import { Button } from "$lib/components/ui/button"
-  import * as Sheet from "$lib/components/ui/sheet"
+  import * as Dialog from "$lib/components/ui/dialog"
 </script>
 
 <div class="flex h-screen flex-col items-center justify-start">
@@ -13,43 +13,46 @@
           <span class="font-bold">Josael</span> Perez
         </li>
         <li>
-          <Sheet.Root>
-            <Sheet.Trigger asChild let:builder>
-              <Button builders={[builder]} class="dark">Get in touch</Button>
-            </Sheet.Trigger>
-            <Sheet.Content side="right" class="dark">
-              <Sheet.Header>
-                <Sheet.Title>Get In Touch</Sheet.Title>
-                <Sheet.Description
-                  >Drop me a message on the following platforms.</Sheet.Description>
-              </Sheet.Header>
-              <div class="">
-                <ul class="mt-4 flex flex-col items-start gap-2">
-                  <li>
-                    <Button
-                      ><i
-                        class="fa-brands fa-whatsapp fa-lg mr-1"
-                        style="color: #222222;"></i
-                      >Whatsapp</Button>
-                  </li>
-                  <li>
-                    <Button
-                      ><i
-                        class="fa-brands fa-linkedin fa-lg mr-1"
-                        style="color: #222222;"></i
-                      >LinkedIn</Button>
-                  </li>
-                  <li>
-                    <Button
-                      ><i
-                        class="fa-regular fa-envelope fa-lg mr-1"
-                        style="color: #222222;"></i
-                      >Gmail</Button>
-                  </li>
-                </ul>
-              </div>
-            </Sheet.Content>
-          </Sheet.Root>
+          <Dialog.Root>
+            <Dialog.Trigger
+              ><Button class="dark">Get In Touch</Button></Dialog.Trigger>
+            <Dialog.Content>
+              <Dialog.Header>
+                <Dialog.Title>Get In Touch</Dialog.Title>
+                <Dialog.Description
+                  >Drop me a message on the following platforms.</Dialog.Description>
+              </Dialog.Header>
+              <ul class="mt-4 flex flex-col items-start gap-2">
+                <li>
+                  <div>
+                    <i
+                      class="fa-brands fa-whatsapp fa-lg mr-1"
+                      style="color: #222222;"></i
+                    ><span class="font-bold">Whatsapp:</span> +52 (686) 2394980
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <i
+                      class="fa-brands fa-linkedin fa-lg mr-1"
+                      style="color: #222222;"></i
+                    ><span class="font-bold">LinkedIn:</span>
+                    <a
+                      href="http://www.linkedin.com/in/josaelprz"
+                      class="underline">JosaelPrz</a>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <i
+                      class="fa-regular fa-envelope fa-lg mr-1"
+                      style="color: #222222;"></i
+                    ><span class="font-bold">Gmail:</span> josael.prz@gmail.com
+                  </div>
+                </li>
+              </ul>
+            </Dialog.Content>
+          </Dialog.Root>
         </li>
       </ul>
     </nav>
