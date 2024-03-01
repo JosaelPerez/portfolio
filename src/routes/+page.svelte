@@ -59,17 +59,23 @@
   ]
 </script>
 
-<div class="flex h-screen flex-col items-center justify-start">
+<div
+  class="flex h-screen flex-col items-center justify-start overflow-hidden sm:overflow-y-auto">
+  <!-- HEADER -->
   <header class="self-stretch">
-    <nav class="bg-transparent px-16 py-8">
-      <ul class="flex list-none items-center justify-end gap-8 text-white">
-        <li class="flex-grow text-2xl">
+    <nav class="bg-transparent px-8 py-8 md:px-16 md:py-8">
+      <ul class="flex list-none items-center gap-8 text-white">
+        <li class="hidden flex-grow text-2xl md:block">
           <span class="font-bold">Josael</span> Perez
         </li>
         <li>
           <Dialog.Root>
-            <Dialog.Trigger
-              ><Button class="dark">Get In Touch</Button></Dialog.Trigger>
+            <Dialog.Trigger>
+              <Button class="dark hidden md:block">Get In Touch</Button>
+              <Button class="dark bg-transparent md:hidden">
+                <i class="fa-solid fa-bars fa-2xl text-white"></i>
+              </Button>
+            </Dialog.Trigger>
             <Dialog.Content>
               <Dialog.Header>
                 <Dialog.Title>Get In Touch</Dialog.Title>
@@ -112,15 +118,19 @@
     </nav>
   </header>
 
-  <main
-    class="flex w-full flex-grow flex-col items-center justify-center overflow-hidden p-0">
+  <!-- MAIN -->
+
+  <main class="flex w-full flex-grow flex-col items-center justify-center p-0">
     <ProfileImage src="assets/profile.jpg" alt="Josael Perez" />
-    <p class="mt-8 text-4xl font-bold text-white">
-      Hi! I'm &lcub;Josael&rcub;<span class="text-4xl"> &#129304</span>
+    <p class="mt-8 text-2xl font-bold text-white md:text-4xl">
+      Hi! I'm &lcub;Josael&rcub;<span class="text-2xl md:text-4xl">
+        &#129304</span>
     </p>
-    <h1 class="text-5xl font-bold text-white">Full Stack Developer</h1>
+    <h1 class="text-3xl font-bold text-white md:text-5xl">
+      Full Stack Developer
+    </h1>
     <Carousel.Root
-      class="dark mt-20 w-full"
+      class="dark w-full sm:mt-20"
       opts={{ loop: true, align: "center", duration: 60 }}
       plugins={[
         Autoplay({
@@ -128,12 +138,13 @@
         }),
       ]}>
       <Carousel.Content class="-ml-4">
-        {#each webLogos as logo, index}
-          <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
+        {#each webLogos as logo}
+          <Carousel.Item
+            class="pl-1 sm:basis-1/2 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
             <div class="p-1">
               <Card.Root class="border-none bg-transparent">
                 <Card.Content
-                  class="flex aspect-square items-center justify-center p-6">
+                  class="flex aspect-square items-center justify-center ">
                   <WebLogo
                     src={logo.src}
                     alt={logo.alt}
@@ -149,8 +160,6 @@
     </Carousel.Root>
   </main>
 </div>
-
-<!-- MAIN -->
 
 <!-- FOOTER -->
 <footer></footer>

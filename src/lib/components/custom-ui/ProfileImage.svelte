@@ -6,4 +6,4 @@
 <img
   {src}
   {alt}
-  class="inline-block h-[220px] w-[220px] rounded-full bg-white text-black" />
+  class="inline-block h-[160px] w-[160px] rounded-full bg-white text-black sm:h-[200px] sm:w-[200px] md:h-[220px] md:w-[220px]" />
