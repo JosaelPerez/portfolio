@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import WebLogo from "$lib/components/custom-ui/WebLogo.svelte"
   import ProfileImage from "$lib/components/custom-ui/ProfileImage.svelte"
   import { Button } from "$lib/components/ui/button"
@@ -6,6 +6,57 @@
   import * as Carousel from "$lib/components/ui/carousel"
   import * as Card from "$lib/components/ui/card"
   import Autoplay from "embla-carousel-autoplay"
+  import { type CarouselAPI } from "$lib/components/ui/carousel/context.js"
+
+  let api: CarouselAPI
+
+  const webLogos = [
+    {
+      src: "assets/html.svg",
+      alt: "HTML Logo",
+      caption: "HTML",
+    },
+    {
+      src: "assets/tailwind.svg",
+      alt: "Tailwind Logo",
+      caption: "Tailwind",
+    },
+    {
+      src: "assets/javascript.svg",
+      alt: "Javascript Logo",
+      caption: "Javascript",
+    },
+    {
+      src: "assets/svelte.svg",
+      alt: "Svelte Logo",
+      caption: "Svelte",
+    },
+    {
+      src: "assets/postgresql.svg",
+      alt: "PostgreSQL Logo",
+      caption: "PostgreSQL",
+    },
+    {
+      src: "assets/prisma.svg",
+      alt: "Prisma Logo",
+      caption: "Prisma",
+    },
+    {
+      src: "assets/vitejs.svg",
+      alt: "ViteJS Logo",
+      caption: "ViteJS",
+    },
+    {
+      src: "assets/github.svg",
+      alt: "GitHub Logo",
+      caption: "GitHub",
+    },
+    {
+      src: "assets/ubuntu.svg",
+      alt: "Ubuntu Logo",
+      caption: "Linux",
+    },
+  ]
 </script>
 
 <div class="flex h-screen flex-col items-center justify-start">
@@ -70,123 +121,28 @@
     <h1 class="text-5xl font-bold text-white">Full Stack Developer</h1>
     <Carousel.Root
       class="dark mt-20 w-full"
-      opts={{ loop: true, align: "center" }}
+      opts={{ loop: true, align: "center", duration: 60 }}
       plugins={[
         Autoplay({
           delay: 2000,
         }),
       ]}>
       <Carousel.Content class="-ml-4">
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/html-gray.svg"
-                  secondarySource="assets/html.svg"
-                  alt="HTML Logo"
-                  caption="HTML" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/tailwind-gray.svg"
-                  secondarySource="assets/tailwind.svg"
-                  alt="Tailwind Logo"
-                  caption="Tailwind" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/javascript-gray.svg"
-                  secondarySource="assets/javascript.svg"
-                  alt="Javascript Logo"
-                  caption="Javascript" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/svelte-gray.svg"
-                  secondarySource="assets/svelte.svg"
-                  alt="Svelte Logo"
-                  caption="Svelte" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/postgresql-gray.svg"
-                  secondarySource="assets/postgresql.svg"
-                  alt="PostgreSQL Logo"
-                  caption="PostgreSQL" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/prisma.svg"
-                  alt="Prisma Logo"
-                  caption="Prisma" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/github.svg"
-                  alt="GitHub Logo"
-                  caption="GitHub" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
-          <div class="p-1">
-            <Card.Root class="border-none bg-transparent">
-              <Card.Content
-                class="flex aspect-square items-center justify-center p-6">
-                <WebLogo
-                  mainSource="assets/ubuntu-gray.svg"
-                  secondarySource="assets/ubuntu.svg"
-                  alt="Ubuntu Logo"
-                  caption="Linux" />
-              </Card.Content>
-            </Card.Root>
-          </div>
-        </Carousel.Item>
+        {#each webLogos as logo, index}
+          <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/6">
+            <div class="p-1">
+              <Card.Root class="border-none bg-transparent">
+                <Card.Content
+                  class="flex aspect-square items-center justify-center p-6">
+                  <WebLogo
+                    src={logo.src}
+                    alt={logo.alt}
+                    caption={logo.caption} />
+                </Card.Content>
+              </Card.Root>
+            </div>
+          </Carousel.Item>
+        {/each}
       </Carousel.Content>
       <Carousel.Previous />
       <Carousel.Next />
