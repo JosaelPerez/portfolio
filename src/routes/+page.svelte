@@ -1,12 +1,13 @@
 <script lang="ts">
-  import WebLogo from "$lib/components/custom-ui/WebLogo.svelte"
-  import ProfileImage from "$lib/components/custom-ui/ProfileImage.svelte"
+  import WebLogo from "$lib/components/custom/WebLogo.svelte"
+  import ProfileImage from "$lib/components/custom/ProfileImage.svelte"
   import { Button } from "$lib/components/ui/button"
   import * as Dialog from "$lib/components/ui/dialog"
   import * as Carousel from "$lib/components/ui/carousel"
   import * as Card from "$lib/components/ui/card"
   import Autoplay from "embla-carousel-autoplay"
   import { type CarouselAPI } from "$lib/components/ui/carousel/context.js"
+  import HighlightReel from "$lib/components/custom/HighlightReel.svelte"
 
   let api: CarouselAPI
 
@@ -60,7 +61,7 @@
 </script>
 
 <div
-  class="flex h-screen flex-col items-center justify-start overflow-hidden sm:overflow-y-auto">
+  class="flex h-screen w-full flex-col items-center justify-start overflow-x-hidden">
   <!-- HEADER -->
   <header class="self-stretch">
     <nav class="bg-transparent px-8 py-8 md:px-16 md:py-8">
@@ -120,44 +121,52 @@
 
   <!-- MAIN -->
 
-  <main class="flex w-full flex-grow flex-col items-center justify-center p-0">
-    <ProfileImage src="assets/profile.jpg" alt="Josael Perez" />
-    <p class="mt-8 text-2xl font-bold text-white md:text-4xl">
-      Hi! I'm &lcub;Josael&rcub;<span class="text-2xl md:text-4xl">
-        &#129304</span>
-    </p>
-    <h1 class="text-3xl font-bold text-white md:text-5xl">
-      Full Stack Developer
-    </h1>
-    <Carousel.Root
-      class="dark w-full sm:mt-20"
-      opts={{ loop: true, align: "center", duration: 60 }}
-      plugins={[
-        Autoplay({
-          delay: 2000,
-        }),
-      ]}>
-      <Carousel.Content class="-ml-4">
-        {#each webLogos as logo}
-          <Carousel.Item
-            class="pl-1 sm:basis-1/2 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
-            <div class="p-1">
-              <Card.Root class="border-none bg-transparent">
-                <Card.Content
-                  class="flex aspect-square items-center justify-center ">
-                  <WebLogo
-                    src={logo.src}
-                    alt={logo.alt}
-                    caption={logo.caption} />
-                </Card.Content>
-              </Card.Root>
-            </div>
-          </Carousel.Item>
-        {/each}
-      </Carousel.Content>
-      <Carousel.Previous />
-      <Carousel.Next />
-    </Carousel.Root>
+  <main
+    class="flex flex-grow flex-col items-center justify-center self-stretch">
+    <div
+      class="flex h-screen flex-col items-center justify-center self-stretch">
+      <ProfileImage src="assets/profile.jpg" alt="Josael Perez" />
+      <p class="mt-8 text-2xl font-bold text-white md:text-4xl">
+        Hi! I'm &lcub;Josael&rcub;<span class="text-2xl md:text-4xl">
+          &#129304</span>
+      </p>
+      <h1 class="text-3xl font-bold text-white md:text-5xl">
+        Full Stack Developer
+      </h1>
+      <Carousel.Root
+        class="dark w-full sm:mt-20"
+        opts={{ loop: true, align: "center", duration: 60 }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}>
+        <Carousel.Content class="-ml-4">
+          {#each webLogos as logo}
+            <Carousel.Item
+              class="pl-1 sm:basis-1/2 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
+              <div class="p-1">
+                <Card.Root class="border-none bg-transparent">
+                  <Card.Content
+                    class="flex aspect-square items-center justify-center ">
+                    <WebLogo
+                      src={logo.src}
+                      alt={logo.alt}
+                      caption={logo.caption} />
+                  </Card.Content>
+                </Card.Root>
+              </div>
+            </Carousel.Item>
+          {/each}
+        </Carousel.Content>
+        <Carousel.Previous />
+        <Carousel.Next />
+      </Carousel.Root>
+    </div>
+
+    <div class="h-screen self-stretch rounded-lg px-20 py-10">
+      <HighlightReel></HighlightReel>
+    </div>
   </main>
 </div>
 
